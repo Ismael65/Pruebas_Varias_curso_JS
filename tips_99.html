@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="es">
+    <head>
+        <title>99 Tips</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- especificar el url base de tu página web  -->
+        <!-- <base href="https://ejemplo.com/"> -->
+        
+        
+    </head>
+    <body>
+        <img src="imagen/logo_personal.png"><br>
+        <img src="imagen/diablo.png"/><br>
+        <br><br>
+        
+        
+        
+        <!-- asociar label e inputs  -->
+        <label for="ps5">¿Quieres un PS5?</label>           
+        <input type="checkbox" name="ps5" id="ps5">
+        <br><br>
+        
+        <!-- enfocar un elemento cuando carga la página  -->
+        Autofocus
+        <input type="text" autofocus/>
+        <br><br>
+        
+        <!-- pedir al navegador que descargue un archivo -->
+        Descargue un archivo
+        <a href="file.pdf" download>Descargar</a>
+        <br><br>
+        
+        <!-- como haver tu pagina web editable  -->
+        <p contenteditable="true">
+            Este contenido es editable
+        </p>
+    <script type="aplication/javascript">
+        document.querySelector("p").addEventListener("input", (e) => {
+        console.log(e)});
+    </script>
+        <br><br>
+        
+        <!-- como escribir direcciones correctamente  -->
+        <address>
+            <a href="mailto:hi@midominio.com">
+                hi@midominio.com
+            </a>
+            <br>
+            <a href="tel:+123456789">
+                (123) 456-7890
+            </a>
+        </address>
+        <br><br>
+        
+        <!-- elemento para mostrar fecha y hora  -->
+        <p>
+            Oasis v a celebrar su 25 aniversario
+            <time datetime="2021-07-07">el 7 de julio</time>
+            en el Hyde Park de Londres
+        </p>
+        <p>
+            El concierto comienza a las 
+            <time datetime="20:00">08:00pm</time>
+        </p>
+        <br><br>
+        
+        <!-- crear links para hacer llamadas o enviar SMS o correos  -->
+        <a href="mailto:email@empresa.com?subject=titulo">
+            Enviar un email
+        </a>
+        <br>
+        <a href="tel:+50612312312">
+            Llamanos
+        </a>
+        <br>
+        <a href="sms:+50612312312?body=contenido">
+            Send us a message
+        </a>
+        <br><br>
+        
+        <!-- agregar "citas" a un documento  -->
+        <blockquote cite="https://pagina.com/articulo.html">
+            <p>Este texto es algo que dijo alguien más.</p>
+        </blockquote>
+        <br><br>
+        
+        <!-- crear un acordeón con solo HTML  -->
+        <!-- crear un acordeon con solo HTML  -->
+        <details>
+            <summary>Titulo</summary>
+            Este es el contenido que se muestra
+        </details>
+        <br><br>
+        
+        <details>
+            <summary> Titulo </summary>
+            Este es el contenido que se muestra
+            <summary> Titulo 2</summary>
+            Este es el contenido que se muestra
+
+        </details>
+
+        <details>
+            <summary> Titulo 3</summary>
+            Este es el contenido que se muestra
+
+        </details>
+        <br><br>
+        
+        <!-- especificar el url base de tu página web  
+        <head>
+            <base href="https://ejemplo.com/">
+        </head> -->
+        <a href="prueba.html">Click aqui</a>
+        <!-- Este resuleve a hhtps://ejemplo.com/prueba.html  --->
+        <br><br>
+        
+        <!-- usar patrones específicos de validación en elementos <input>  -->
+        Solo puede tener una cadena de texto de 4 a 8 caracteres todos en minuscula para ser valido
+        <input type="text" pattern="[a-z]{4,8}" required/>
+        <br><br>
+        
+        
+        <!-- invertir los números en una lista  -->
+        <ol>
+            <li>Primero</li>
+            <li>Segundo</li>
+            <li>Tercero</li>
+        </ol>
+        <ol reversed>
+            <li>Primero</li>
+            <li>Segundo</li>
+            <li>Tercero</li>
+        </ol>
+        
+        <!-- crear un selector con autocomplete con puro HTML  -->
+        <label>
+            ¿Que quieres comer?
+            <input list="elementos"/>
+        </label>
+        <datalist id="elementos">
+            <option>Hamburguesa</option>
+            <option>Pizza</option>
+            <option>Tacos</option>
+            <option>Arepa</option>
+        </datalist>
+        <br><br>
+        
+        <!-- como usar un selector de colores  -->
+        color:<input type="color"/>
+        <br><br>
+        
+        <!-- cargar imágen con "lazy load" 
+           Este atributo le indica al navegador que solo cargue la imagen cuando
+           esté cerca de mostrar en el viewport-->
+           Imagen por cargar <img src="path/a/la/imagen.jpg" loading="lazy"/>
+           <br><br>
+        
+           <!-- cargando imagen para cada media query
+           el elemento <picture> que junto a <source> te permite cargar diferentes
+           imagen dependiendo de um media query-->
+           <picture>
+               imagen de distintas resoluciones
+               <source
+                   srcset="/path/a/ala/imagen-800.jpg"
+                   media="(min-width:800px)">
+               <img src="/path/a/ala/imagen-320.jpg"/>
+           </picture>
+           <!-- picture puede contener cero o varios source y es aquí donde la
+           pasamos la imagenen el atributo srcset y él media query donde queremos que esta imagen se muestre.
+           Al final le pasamos in img element normal para cuando ningún media querry haga match.
+           Esto te va a permitir tener imágenes de diferentes resoluciones y tamaños
+           para cada tipo de pantalla.-->
+                      
+           <br><br>
+           
+           <!-- hacer una barra de progreso  -->
+           Barra de progreso
+           <progress max="100" value="70">70%</progress>
+           <br><br>
+           
+        
+        
+        <!-- como usar el elemento <dialog>  -->
+        <dialog open>
+            <h3>Titulo del Dialogo</h3>
+            <p>Contenido del dialogo</p>
+        </dialog>
+        <script>
+            const dialog = document.querySelector("dialog");
+            dialog.showModal();
+        </script>            
+        <!-- no se ejecuta la forma Modal -->
+        <!-- La ventana esta en la pagina y los elementos pasan por detras de ella -->
+        <br><br>
+
+        <!-- indicar lenguaje en una seccion especifica del documento  -->
+        <!-- <html lang="en">  -->
+        <p>This is english</p>
+        <p lang="es">Esto es español</p>
+        <br><br>
+        
+        <!-- Corrector Ortografico (tanto Ingles como en Español) -->
+        <textarea spellcheck="true">
+            Jere is some text widt some error
+        </textarea>
+        
+        <textarea lang="es" spellcheck="true">
+            Aki ai un error
+        </textarea>
+        <br>
+        
+        <!-- Indica el tipo de archivo que acepta un input file -->
+        <!-- Solo imagen -->
+        Solo imagen<input type="file" accept="image/*"/>
+        <br>
+        <!-- Solo archivo .pdf -->
+        Solo .pdf<input type="file" accept=".pdf"/>
+        <br><br>
+        
+        <!-- permitir al usuario escanear su tarjeta de credito  -->
+        Escanear su tarjeta de credito
+        <form>
+            <input type="text" autocomplete="cc-name"/>
+            <input type="text" autocomplete="cc-number"/>
+            <input type="number" autocomplete="cc-exp-month"/>
+            <input type="number" autocomplete="cc-exp-year"/>
+            <input type="text" autocomplete="cc-csc"/>
+        </form>
+        <br><br>
+        
+        <!-- ¿que es el elemento template?  -->
+        Template
+        <template>
+            <h1>Un titulo</h1>
+        </template>
+        <script>
+            const temp = document.querySelector("template");
+            const newTemp = temp.content.cloneNode(true);
+            document.body.appendChild(newTemp);
+        </script>
+        <br><br>
+        
+        <!-- Elemento output -->
+        <form>
+            <input type="range" name="b" value="50" /> +
+            <input type="number" name="a" value="10" /> =
+            <output for="a + b">60</output>
+        <!-- no se ve la relacion  -->
+        </form>
+        <br>
+        
+        
+        <!-- Elemento input de tipo "rango"  -->
+        Input tipo rango<input type="range" min="0" max="100" >
+        <br><br>
+        
+        <!-- permite a un usuario seleccionear múltiples archivos  -->
+        Seleccionar multiples archivos<br>
+        <input type="file" multiple/>
+        <br><br>
+        
+        <!-- cómo cargar archivos de Javascript y asegurar el rendimiento  -->
+        <script src="app.js" defer></script>
+        <!-- defer le dice al navegador que no espere el archivo javascript cuando renderice el HTML.
+        Así se renderizará primero el DOM y luego se ejecutará el script-->
+        <script src="app.js" async></script>
+        <!-- async es similar al defer, la única diferencia es que async le dice al navegador que 
+        cargue y ejecute el script la forma asíncrona mientras se carga la UI-->
+        
+         <!--Texto (grande) con gradiente  el formato esta en el <style>-->
+        <h1>Hola Mundo</h1>
+        <br>
+        
+        <h2>Hola Mundo</h1>
+        <br>
+        
+        <!-- *********************** CSS *********************** -->        
+        CSS
+        
+        <!-- centrar elemento en pantalla completa  -->
+        <div class="parent">
+            <h1>Mi nombre es Ismael</h1>
+        </div>
+        <style type="text/css">
+            .parent{
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                place-content: center;
+                place-items: center;
+            }           
+        </style>
+        <br><br>
+        
+        <!-- delimitar texto con puntitos  -->
+        <div class="parent">
+            <h1>Mi nombre es Ismael</h1>
+        </div>
+        <style type="text/css">
+            h1{
+                width: 600px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }         
+        </style>
+        <br><br>
+        
+        <!-- agregar estilos al placeholder de los inputs  -->
+        <label>Agregar estilos al placeholder de los inputs</label><br>
+         <!-- Borde verde  -->
+         <input type="text" placeholder="Ingresa tu nombre"/>
+         
+         <!-- Borde azul  -->
+         <input type="text" placeholder="Ingresa tu apellido" value="Montes"/>
+        <style type="text/css">
+            input{
+                border: solid 1px #212087;
+            }
+            input:placeholder-shown{
+                border: solid 1px #4E9A06;
+            }
+        </style>
+        <br><br>
+        
+        <!-- agregar estilos a los inputs en sus estados válido e inválido  -->
+        <label>Agregar estilos a los inputs en sus estados válido e inválido</label><br>
+        <!-- Rojo  -->
+        <input type="text" placeholder="Ingresa tu nombre" required/>
+         
+         <!-- Verde  -->
+         <input type="text" placeholder="Ingresa tu apellido" value="Montes" required/>
+        <style type="text/css">
+            input:valid{
+                border: solid 1px #4E9A06;
+            }
+            input:invalid{
+                border: solid 1px #F30A0A;
+            }
+        </style>
+        <br><br>
+        
+        <!-- Aplica estilo a un elemento solo cuando tenga contenido  -->
+        <label>Aplica estilo a un elemento solo cuando tenga contenido  </label><br>
+        <!-- Se muestra con borde  -->
+        <p>Contenido</p>
+        <!-- No se muestra nada  -->
+        <p></p>
+        <style type="text/css">
+             p:not(:empty){
+                /* border: solid 1px; */
+            }            
+        </style>
+        <br><br>
+        
+        <!-- Efecto de libro antiguo con la primera letra del párrafo  -->
+        <label>Efecto de libro antiguo con la primera letra del párrafo</label><br>
+        <p>Lorem ipsum dolor sit</p>
+        <style type="text/css">
+            p:first-letter{
+                font-family: Georgia;
+                font-size: 4rem;
+                line-height: 1;
+            }          
+        </style>
+        <br><br>
+        
+        <!-- Recortar una imagen con CSS  -->
+        <label>Recortar una imagen con CSS</label><br>
+        <img src="imagen/diablo.png"/>
+        <style type="text/css">
+            img{
+                width: 100px;
+                height: 80px;
+                object-fit: cover;
+            }
+        </style>
+        <br><br>
+        
+        <!-- Agregar gradiente a un texto  -->
+        <label>Agregar gradiente a un texto</label><br>
+        <h1>Hola Mundo Pequeño</h1>
+        <style type="text/css">
+            h1{
+                font-size: 50px;
+                background: linear-gradient(#eee, #333);
+                background-clip: text;
+                text-fill-color: transparent;
+            }           
+        </style>
+        <br><br>
+        
+        <!-- Poner una imagen de fondo a un texto  -->
+        <label>Poner una imagen de fondo a un texto</label><br>
+        <h1>Hola Mundo Pequeño</h1>
+        <style type="text/css">
+            h1{
+                background: blue url("imagen/diablo.png");
+                background-clip: text;
+                color: transparent;
+                font-size: 40px;
+            }          
+        </style>
+        <br><br>
+        
+        <!-- Cómo aplicar filtro a un elemento  -->
+        <label>Cómo aplicar filtro a un elemento</label><br>
+        <p class="elemento">Lorem ipsum dolor sit</p>
+        <style type="text/css">
+            .elemento{
+                filter: blur(0.2rem);
+            }            
+        </style>
+        <br><br>
+        
+        <!-- Cómo aplicar filtro al background  -->
+        <label>Cómo aplicar filtro al background</label><br>
+        <p class="elemento">Lorem ipsum dolor sit</p>
+        <style type="text/css">
+            .elemento{
+                backdrop-filter: blur(0.2rem);
+            }      
+        </style>
+        <br><br>
+        
+        <!-- Hecar una imagen en escala de grises  -->
+        <label>Hacer una imagen en escala de grises</label><br>
+        <img src="imagen/diablo.png"/>
+        <style type="text/css">
+            img{
+                filter: grayscale(100%);
+            }           
+        </style>
+        <br><br>
+        
+        <!-- Quitar los estilos nativos del navegador  -->
+        <label>Quitar los estilos nativos del navegador</label><br>
+        <style type="text/css">
+            select, input{
+                appearance: none;
+            }          
+        </style>
+        <br><br>
+        
+        <!-- Crear una imagen monocromática  -->
+        <label>Crear una imagen monocromática</label><br>
+        <div class="color">
+            <img src="imagen/diablo.png">
+        </div>            
+        <style type="text/css">
+            .color{
+                background: #00c2ff;
+            }
+            .color img{
+                mix-blend-mode: multiply;
+                filter: grayscale(100%);
+            }
+        </style>
+        <br><br>
+        
+        <!-- Permitir al usuario cambiar el tamaño de un textarea  -->
+        <label>Permitir al usuario cambiar el tamaño de un textarea</label><br>
+        <textarea>Hola Mundo Grande</textarea>
+        <style type="text/css">
+            textarea{
+                resize: both;
+                /* También puedes usar "vertical" y "horizontal" */
+            }         
+        </style>
+        <br><br>
+        
+        <!-- Cómo aplicar estilos a todos los elementos de la página  -->
+        <label>Cómo aplicar estilos a todos los elementos de la página</label><br>
+        <!-- <style type="text/css">
+            * {
+                border: solid 1px red;
+            }           
+        </style>  -->
+        <br><br>
+        
+        <!-- Cambiar el color de fondo de texto selccionado  -->
+        <label>Cambiar el color de fondo de texto selccionado</label><br>
+        <select name="Paises" class="fondo">
+                    <option value="Venezuela">Venezuela</option>
+                    <option value="Colombia">Colombia</option>
+                    <option value="Peru">Peru</option>
+                </select>
+        <style type="text/css">
+            *::selection{
+                background-color: #EDD400;
+                color: #1A10F4;
+            }           
+        </style>
+        <br><br>
+        
+        <!-- Cambiar el color del caret de inserción  -->
+        <label>Cambiar el color del caret de inserción</label><br>
+        <input type="text" placeholder="Ingresa tu nombre" required/><br>
+        <textarea>Hola Mundo Grande</textarea>
+        <style type="text/css">
+            input, textarea{
+                caret-color: #CC0000;
+            }           
+        </style>
+        <br><br>
+        
+        <!-- Cómo hacerle estilos a los elementos dentro y fuera de rango  -->
+        <label>Cómo hacerle estilos a los elementos dentro y fuera de rango</label><br>
+        <!-- En el rango -->
+        <input type="number" min="0" max="100" value="99"/><br>
+        <!-- Fuera de rango -->
+        <input type="number" min="0" max="100" value="200"/><br>
+        <!-- Fuera de rango -->
+        <input type="date" max="2019-12-25" step="1" value="2020-12-25"/><br>
+        <style type="text/css">
+            input:in-range{
+                border: solid 1px green;
+            }
+            input:out-of-range{
+                border: solid 1px red;
+            }
+        </style>
+        <br><br>
+        
+        <!-- Escribir CSS que el navegador soporte  -->
+        <label>Escribir CSS que el navegador soporte</label><br>
+        <div>
+            <p>Parrafo para soporte de CSS nuevos</p>
+        </div>
+        <style type="text/css">
+            div{
+                display: flex;
+            }
+           /*  @supports (display: grid) {
+                div{
+                    display: grid;
+                }
+            } */
+        </style>
+        <br><br>
+        
+        <!-- Aplicar estilo cuando la página está en fullscreen  -->
+        <label>Aplicar estilo cuando la página está en fullscreen</label><br>
+        <style type="text/css">
+            .content:fullscreen{
+                background-color: #FFAAAA;
+            }           
+        </style>
+        <br><br>
+        
+        <!-- Agregar un reflejo al contenido  -->
+        <label>Agregar un reflejo al contenido</label><br>
+        <h1>Reflejo de Contenido</h1>
+        <style type="text/css">
+            h1{
+                -webkit-box-reflect: below 10px;
+            }           
+        </style>
+        <br><br>
+        
+        <!-- Crear un grid de cards responsive sin media queries  -->
+        <label>Crear un grid de cards responsive sin media queries</label><br>
+        <div class="cards">
+            <div class="box">Box 1</div>
+            <div class="box">Box 2</div>
+            <div class="box">Box 3</div>
+            <div class="box">Box 4</div>            
+        </div>
+        <style type="text/css">
+            .cards{
+                display: grid;
+                grid-template-columns:
+                    repeat(auto-fit, mimax(200px, 1fr));
+                grid-gad: 1rem;
+            }           
+        </style>
+        <br><br>
+        
+        <!-- Aplicar sombra a una imagen png transparente  -->
+        <label>Aplicar sombra a una imagen png transparente</label><br>
+        <img src="imagen/diablo.png"/>
+        <style type="text/css">
+            img{
+                filter: drop-shadow(5px 5px 5px #222222);
+            }          
+        </style>
+        <br><br>
+        
+        <!-- Hacer que el texto rodee una imagen  -->
+        <label>Hacer que el texto rodee una imagen</label><br>
+        <img src="imagen/diablo.png"/>
+        Bienvenidos al curso de JavaScript de Píldoras Informáticas, 
+        Bienvenidos al curso de JavaScript de Píldoras Informáticas, 
+        Bienvenidos al curso de JavaScript de Píldoras Informáticas
+        <style type="text/css">
+            img{
+                float: left;
+                width: 100px;
+                margin: 20px;
+                shape-outside: url("diablo.png");
+            }           
+        </style>
+        <br><br>
+        
+        <!--   -->
+        <style type="text/css">
+                       
+        </style>
+        <br><br>
+        
+        <!-- Prevenir la seleccion de texto  -->
+        <label>Prevenir la seleccion de texto</label><br>
+        <p class="no-seleccionar">Bienvenidos al curso de JavaScript de Píldoras Informáticas, 
+        Bienvenidos al curso de JavaScript de Píldoras Informáticas, 
+        Bienvenidos al curso de JavaScript de Píldoras Informáticas</p>
+        <style type="text/css">
+            .no-seleccionar{
+                user-select: none;
+            }           
+        </style>
+        <br><br>
+        
+        <!-- Quitar los eventos de un elemento  -->
+        <label>Quitar los eventos de un elemento</label><br>
+        <input type="button" value="Boton">
+        <style type="text/css">
+            button{
+                pointer-events: none;
+            }          
+        </style>
+        <br><br>
+        
+        <!-- Que es :is  -->
+        <label>Que es :is</label><br>
+        <style type="text/css">
+            :is(heder, main, footer) p: {
+                color: red;
+            }          
+        </style>
+        <br><br>
+        
+        <!-- Qué es :not  -->
+        <!-- para seleccionar todos los elementos que no sean un p  -->
+        <label>Qué es :not</label><br>
+        <style type="text/css">
+            :not(p){
+                color: blue;
+            }          
+        </style>
+        <br><br>
+        
+        <!-- Qué es :not  -->        
+        <!-- podemos seleccionar todos los p que no tengan la clase .fancy -->
+        <label>Qué es :not</label><br>
+        <style type="text/css">
+            p:not(.fancy){
+                color: green;
+            }          
+        </style>
+        <br><br>
+        
+        <!-- Qué es :not  -->
+        <!-- ejemplo de como seleccionar todos los elementos del body que no
+        sea div ni span-->
+        <label>Qué es :not</label><br>
+        <style type="text/css">
+            body :not(div):not(span){
+                font-weight: bold;
+            }          
+        </style>
+        <br><br>
+        
+        <!--   -->
+        <label>Cómo crear y usar variables</label><br>
+        <!-- <style type="text/css">
+            :root{
+                --main-color: red;
+                --secondary-color: blue;
+            }           
+        </style>
+        Y para usarlas se tienen que utilizar la función var()
+        <h1>Esto es un titulo h1</h1><br>
+        <h2>Esto es un titulo h1</h2><br>
+        <h3></h3><br>
+        <style type="text/css">
+            h1, h2, h3{
+                color: var(--main-color);
+            }
+            footer{
+                color: var(--secondary-color);
+            }
+        </style> -->
+        <br><br>
+        
+        <!--Qué es box-sizing y porque usarla -->
+        <!--es una propiedad que te permite establecer como se va a calcular el 
+        alto y ancho de una caja.    Por defecto si una caja mide 100x100px, pero 
+        tiene un pading de 10px la caja termina midiendo 120x120px para cambiar eso
+        usamos-->
+        <label>Qué es box-sizing y porque usarla</label><br>
+        <style type="text/css">
+             *,
+             *:before,
+             *:after{
+                 box-sizing: border-box;
+             }
+        </style>
+        <br><br>
+        
+        
+        
+        <!-- *********************** JAVASCRIPT  *********************** -->
+        JavaScript
+        <!--   como asignar valores por defecto a las variables-->  
+        <script type="text/javascript">
+          //OK
+          var result;
+          if (value) {
+              result = value;   
+            } else {
+                result = "fallback value";
+            }
+           // Mejor
+           var result = value || "fallback value";
+        </script>
+        <br><br>
+        
+        <!-- cómo hacer condiciones más cortas  -->  
+        <script type="text/javascript">
+          // OK          
+          if (pizzaToppings.includes("piña")) {
+              comer = "NO";   
+            } else {
+                comer = "CLARO QUE SI";
+            }
+          // Mejor
+          let comer = pizzaTopings.includes("piña") ?
+            "NO"
+            :  //los : vienen siendo como el "else"
+            "CLARO QUE SI";
+        </script>
+        <br><br>
+        
+        <!-- mostrar más información al depurar  -->          
+        <script type="text/javascript">
+        function hacerAlgo(){
+            console.trace("Aqui estoy haciendo algo");
+        }  
+        </script>
+        <br><br>
+        
+        <!-- cómo saber cuanto tiempo tarda un código en ejecutarse  -->  
+        <script type="text/javascript">
+          console.time("timer-name");
+          for (let i=0; i<10000000; i++){
+              //hacer algo
+          }
+          console.timeEnd("timer-name");
+        </script>
+        <br><br>
+        
+        <!-- cómo extraer valores de un array don "Destructuración"  -->  
+        <script type="text/javascript">
+          // OK
+          var array = ["Freddy", "Montes"];
+          var firsName = array[0];
+          var lastName = array[1];
+          //Mejor, usando "Destructuring"
+          var array = ["Freddy", "Montes"];
+          var [firsName, lastName] = array;
+          console.log(firsName, lastName);
+        </script>
+        <br><br>
+        
+        <!-- cómo extraer valores de un array con "Destructuración de objetos"  -->  
+        <script type="text/javascript">
+          const array = ["Freddy", "Eduardo", "Montes", "Angulo"];
+          const {0: nombre, 2: apellido } = array;
+          console.log(nombre,apellido);
+        </script>
+        <br><br>
+        
+        <!-- cómo extraer propiedades de un objeto  -->  
+        <script type="text/javascript">
+          const objeto = {
+              nombre: "Freddy",
+              apellido: "Montes",
+              web: "fmontes.com"
+          };
+          const {nombre, apellido} = objeto;
+          console.log(nombre);
+          console.log(apellido);
+        </script>
+        <br><br>
+        
+        <!-- cómo "Destructurar" elementos de un objeto en variables existentes  -->  
+        <script type="text/javascript">
+          const objeto = {
+              nombre: "Freddy",
+              apellido: "Montes",
+              web: "fmontes.com"
+          };
+          var nombre;
+          var apellido;
+          var {nombre, apellido} = objeto;
+          console.log(nombre);
+          console.log(apellido);
+        </script>
+        <br><br>
+        
+        <!-- cómo formatear la salida del método JSON.stringfy  -->  
+        <script type="text/javascript">
+          const objeto = {
+              nombre: "Freddy",
+              apellido: "Montes",
+              web: "fmontes.com"
+          };
+          console.log(JSON.stringify(objeto, null,2));
+        </script>
+        <br><br>
+        
+        <!-- cómo hacer los numeros grandes más legible  -->  
+        <script type="text/javascript">
+          // const numeroGrande = 1_000_000;
+          // 1000000
+        </script>
+        <br><br>
+        
+        <!-- eliminar elementos duplicados de un array  -->  
+        <script type="text/javascript">
+          const arrayConDuplicados = [
+              "Freddy", 
+              "Montes", 
+              "Freddy",
+              1,
+              2,
+              1,
+              3,
+              3
+          ];
+          const sinDupes = [...new Set(arrayConDuplicados)];
+          console.log(sinDupes);
+        </script>
+        <br><br>
+        
+        <!-- cómo acceder a los media queries con JavaScript  -->  
+        <script type="text/javascript">
+          let mql = window.matchMedia("(max-width:600px)");
+          if(mql.matches){
+              console.log("El viewport es 600px o menos");
+          }
+          mql.addEventListener("change", probarMediaQuery);
+          function probarMediaQuery(e){
+              if(e.matches){
+                  console.log("El viewport es 600px o menos")
+              }
+          }
+        </script>
+        <br><br>
+        
+        <!-- cómo saber si una función de llamó cantidad de veces -->  
+        <script type="text/javascript">
+          function hacerAlgo(){
+              console.count("hacerAlgo se llamó");
+          }
+          hacerAlgo();
+          hacerAlgo();
+          hacerAlgo();
+        </script>
+        <br><br>
+        
+        <!-- cómo verificar si una variable tiene el valor que esperamos  -->  
+        <script type="text/javascript">
+          // normalmente haces algo como
+          var variable=0;
+          if(!variable){
+              console.log("variable no existe");
+          }
+          // pero puedes hacer
+          console.assert(variable, "variable no existe");
+        </script>
+        <br><br>
+        
+        <!-- cómo inspeccionar loa propiedades y métodos en un elemento HTML  -->  
+        <p id="someElement">Hola gente</p>
+        <script type="text/javascript">
+          const element = document.querySelector("#someElement");
+          console.log(element);
+          
+          console.dir(element);
+        </script>
+        <br><br>
+        
+        <!-- agregar propiedades con nombres dinámicos a objetos  -->  
+        <script type="text/javascript">
+          // OK
+          const dynamic = "color";
+          const car = {
+              brand: "Ford"
+          };
+          card[dynamic] = "blue";
+          // Mejor puedes agregar propiedades dinamicas usando []
+          const dynamic = "color";
+          const car = {
+              brand: "Ford",
+              [dynamic]: "blue"
+          };
+        </script>
+        <br><br>
+        
+        <!--   -->  
+        <script type="text/javascript">
+          
+        </script>
+        <br><br>
+        
+        <!-- ejecutar funciones con cortocircuito  //  el cortocircuito no es más que
+        ejecutar una funcuón si se cumple una condición -->  
+        <script type="text/javascript">
+          // OK
+          if(hungry){
+              getSomeFruit();
+          }
+          // Mejor
+          hungry && getSomeFruit();
+        </script>
+        <br><br>
+        
+        <!-- filtrar valores falsey de un array  -->  
+        <script type="text/javascript">
+          const array = [
+              0,
+              "esto",
+              "",
+              "si",
+              undefined,
+              null,
+              "queda",
+              NaN
+          ];
+          const filtered = array.filter(Boolean);
+          console.log(filtered);
+        </script>
+        <br><br>
+        
+        <!-- combinar objetos  -->  
+        <script type="text/javascript">
+          const color ={
+              color: "brown"
+          };
+          const height ={
+              height: "7"
+          };
+          const firstName = {
+              firstName: "Freddy"
+          };
+          const fullInfo = {... color, ... firstName, ... height};
+          console.log(fullInfo);
+        </script>
+        <br><br>
+        
+        <!-- extraer los últimos elementos de un array  -->  
+        <script type="text/javascript">
+          const array = [0, 1, 2, 3, 4, 5, 6, 7];
+          
+          console.log(array.slice(-1));   // [7]
+          console.log(array.slice(-2));   // [6, 7]
+          console.log(array.slice(-3));   // [5, 6, 7]
+        </script>
+        <br><br>
+        
+        <!-- parsear cualquier valor  -->  
+        <script type="text/javascript">
+          JSON.parse("true");   // true
+          JSON.parse("false");   // false
+          JSON.parse(true);   // true
+          JSON.parse(false);   // false
+          JSON.parse("100");  // 100
+          JSON.parse("100.20");   // 100.20
+          JSON.parse(100);   // 100
+          JSON.parse(100.20);   // 100.20
+          
+        JSON.parse("some string");   // Uncaught SyntaxError
+        </script>
+        <br><br>
+        
+        <!-- cómo manejar funciones con muchos parámetros  -->  
+        <script type="text/javascript">
+          // No hecar esto
+          function hacerAlgo(nombre, apellido, email){
+              console.log(nombre, apellido, email);
+          }
+          //Mejor hacer
+          function hacerAlgo({nombre, apellido, email}){
+              console.log(nombre, apellido, email);
+          }
+        </script>
+        <br><br>
+        
+        <!-- cómo eliminar un elemento sin cambiar el objeto original  -->  
+        <script type="text/javascript">
+          const miObjeto ={
+              nombre: "Freddy",
+              apellido: "Montes"
+          };
+          //Si quiero eliminar el apellido de este objeto
+          const {apellido, ... nuevoObjeto} = miObjeto;
+          console.log(nuevoObjeto);
+        </script>
+        <br><br>
+        
+        <!-- cómo mostrar los elementos de un array de objetos como una tabla en la consola  -->  
+        <script type="text/javascript">
+          const data =[{
+              nombre: "Freddy",
+              apellido: "Montes"
+          },{
+              nombre: "Jose",
+              apellido: "Gonzalez"
+          },{
+              nombre: "Jhon",
+              apellido: "Doe"
+          }];
+      console.table(data);
+        </script>
+        <br><br>
+        
+        <!-- cómo sumar todos los números de un array  -->  
+        <!-- <script type="text/javascript">
+          const precios = [100, 1232, 6453, 234, 2123];
+          const total = precios.reduce((sub, precio) =>{}
+                  return sub + precio;
+                          , 0);
+                          console.log(total);
+        </script> -->
+        <br><br>
+        
+        <!-- prevenir que se combie un objeto  -->  
+        <script type="text/javascript">
+          const misDatos = {
+              nombre: "Freddy"
+          };
+          object.freeze(misDatos);
+          misDatos.nombre = "Carlos";
+          //error en strict mode
+          
+          console.log(misDatos.nombre);   // expected output: Freddy
+        </script>
+        <br><br>
+        
+        <!-- hacer croll a un elemento específico  -->  
+        <script type="text/javascript">
+          const scrollAqui = document.querySelector("#aqui");
+          
+          scrollAqui.scrollIntoView({
+              behavior: "smooth"
+          })
+        </script>
+        <br><br>
+        
+        <!-- Iterar un objeto con for ... in  -->  
+        <script type="text/javascript">
+          const misDatos = {
+              nombre: "Freddy",
+              apellido: "Montes",
+              web: "fmontes.com"
+          };
+          for(const property in misDatos){
+              console.log($[property], $[misDatos[property]]);
+          };
+        </script>
+        <br><br>
+        
+        <!-- Iterar un objeto con object.entries()  -->  
+        <script type="text/javascript">
+          const misDatos = {
+              nombre: "Freddy",
+              apellido: "Montes",
+              web: "fmontes.com"
+          };
+          const matriz = Object.entries(misDatos);
+          console.log(matriz);
+          
+          Object.entries(misDatos).forEach(([key, value]) =>{
+              console.log($[key] , $[value]);
+          });
+        </script>
+        <br><br>
+        
+        <!-- cómo guardar todos los keys de un objeto en un array  -->  
+        <script type="text/javascript">
+          const misDatos = {
+              nombre: "Freddy",
+              apellido: "Montes",
+              web: "fmontes.com"
+          };
+          const misDatosKeys = Object.keys(misDatos);
+          console.log(misDatosKeys);
+          // ["nombre", "apellido", "web"]
+        </script>
+        <br><br>
+        
+        <!-- cómo guardar todo los values de un objeto en un array  -->  
+        <script type="text/javascript">
+          const misDatos = {
+              nombre: "Freddy",
+              apellido: "Montes",
+              web: "fmontes.com"
+          };
+          const misDatosKeys = Object.values(misDatos);
+          console.log(misDatosKeys);
+          // ["Freddy", "Montes", "fmontes.com"]
+        </script>
+        <br><br>
+        
+        
+    </body>
+</html>
+

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Array Soy Dalton</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div></div>
+        <script>
+            
+            const  materias={
+                fisica:["Perez", "Pedro", "Pepito", "Coflan", "Maria"],
+                programacion:["Dalton", "Pedro", "Juan", "Pepito"],
+                ligica:["Hernandez", "Pedro", "Juan", "Pepito", "Coflan", "Maria"],
+                quimica:["Rodriguez", "Pedro", "Juan", "Pepito", "Coflan", "Maria"]
+            };
+            const obtenerInformacion = (materia)=>{
+                if(materias[materia] !== undefined){
+                    return [materias[materia], materia, materias];
+                } else {
+                    return materias;
+                }
+            };
+            const mostrarInformacion = (materia)=>{
+                let informacion = obtenerInformacion(materia);
+                    if(informacion !== false){
+                        let profesor = informacion[0][0];
+                        alumnos = informacion[0];
+                        alumnos.shift();
+                        document.write(`El profesor de <b>${informacion}</b> es: <b style="color:red">${profesor}</b><br> 
+                            los alumnos son: <b style="color:blue">${alumnos}</b><br>`);
+                    }
+            };
+            const cantidadDeClases = (alumnos)=>{
+                let informacion = obtenerInformacion();
+                let clasesPresentes= [];
+                let cantidadTotal = 0;
+                for (info in informacion){
+                    if(informacion[info].includes(alumnos)){
+                        cantidadTotal++;
+                        clasesPresentes.push(" " + info);
+                    }
+                }
+                return `<b style="color:blue">${alumnos}</b> esta en <b>${cantidadTotal} clases:
+                        <b style="color:green">${clasesPresentes}</b><br><br>`;
+            };
+            
+            
+            document.write(cantidadDeClases("Coflan"));
+            document.write(cantidadDeClases("Pedro"));
+            
+            mostrarInformacion("fisica");
+            mostrarInformacion("quimica");
+            mostrarInformacion("logica");
+            mostrarInformacion("programacion");
+    
+            
+        </script>
+    </body>
+</html>
